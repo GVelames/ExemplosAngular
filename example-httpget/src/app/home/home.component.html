@@ -1,0 +1,11 @@
+<div>
+    <h3>Exemplo de uso do Observable.</h3>
+    <button (click)="listarNomes()">Listar Nomes</button>
+    <button (click)="limparNomes()">Limpar Nomes</button>
+
+    <div [hidden]="nomes ? false : true">
+        <ul>
+            <li *ngFor="let nome of nomes">{{nome}}</li>
+        </ul>
+    </div>
+</div>
