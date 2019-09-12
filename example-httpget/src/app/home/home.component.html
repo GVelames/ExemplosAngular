@@ -1,11 +1,46 @@
-<div>
-    <h3>Exemplo de uso do Observable.</h3>
-    <button (click)="listarNomes()">Listar Nomes</button>
-    <button (click)="limparNomes()">Limpar Nomes</button>
+<div class="container" style="margin-top: 20px">
+  <h3>Exemplo de uso do Observable.</h3>
+  <div class="col-11">
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-outline-primary" (click)="listarNomesFromServer()">
+          Listar nomes server
+        </button>
+      </div>
+      <div class="col">
+        <button class="btn btn-outline-primary" (click)="listarNomesFromJson()">
+          Listar nomes json
+        </button>
+      </div>
 
-    <div [hidden]="nomes ? false : true">
-        <ul>
-            <li *ngFor="let nome of nomes">{{nome}}</li>
-        </ul>
+      <div class="col">
+        <button class="btn btn-outline-primary" (click)="listarNomesFromTxt()">
+          Listar nomes texto
+        </button>
+      </div>
+
+      <div class="col">
+        <button class="btn btn-outline-primary" (click)="limparNomes()">
+          Limpar nomes
+        </button>
+      </div>
+
+      <div class="col">
+        <button class="btn btn-outline-primary" (click)="carregarImagem()">
+          Carregar Imagem
+        </button>
+      </div>
     </div>
+  </div>
+
+  <div style="margin-top: 20px">
+    <ul [hidden]="nomes.lenght == 0">
+      <li *ngFor="let nome of nomes">{{ nome }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="imagem">
+    <span>Imagem: </span>
+    <img [src]="imagem" />
+  </div>
 </div>
